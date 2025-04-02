@@ -50,3 +50,18 @@ let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
 
 console.log("Authentication Status:", authenticationStatus);
+
+let userAccess = "Employee"
+let accesscode;
+
+if ( userAccess === "Employee") {
+  accesscode = "Dietary Services";
+} else if ( userAccess = "Enrolled Member") {
+  accesscode = "Dietary Services and one-on-one interaction";
+} else if ( userAccess = "Subscriber") {
+  accesscode = "Partial acces to Dietary Services";
+} else if ( userAccess = "Non-Subscriber") {
+  accesscode = "Enroll / subscribe";
+}
+
+console.log("Accescode;",accesscode);
