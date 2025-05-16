@@ -1,0 +1,54 @@
+let books = [];
+
+function addBook() {
+
+    const bookName = document.getElementById('bookName').value;
+    const authorName = document.getElementById('authorName').value;
+    const bookDescripton = document.getElementById('bookDescription').value;
+    const pageNumber = parseInt(document.getElementById('pagesNumber').value);
+    if (bookName && authorName && bookDescripton && !isNaN(pageNumber)) {
+        const book = {
+            name: bookName,
+            authorName: authorName,
+            bookDescripton: bookDescripton,
+            pageNumber: pageNumber,
+        };
+        books.push(book);
+        showbooks();
+        clearUnputs();
+    } else {
+        alert('Please fill in all fields correctly.');
+    }
+}
+
+function showbooks() {
+    const booksDiv = books.map((book,index) => `<h1>book Number: ${index + 1}</h1>
+    <p><strong>Book Name: </strong>${book.name}</p>
+    <p><strong>Author Name:</strong> ${book.authorName}</p>
+    <p><strong>Book Description:</strong>${book.bookDescripton}</p>
+    <p><strong>No. of Pages:</strong> ${book.pageNumber} page(s)</p>
+    <button onclick="editbook(${index})>Edit</button>`
+);
+document.getElementById('books').innerHTML = booksDiv.join('');
+}
+
+function editbook(index) {
+    const book = books[index];
+    document.getElementById('bookName').value = book.name;
+    document.getElementById('authorName').value = book.authorName;
+    document.getElementById('bookDescription').value = book.bookDescripton;
+    document.getElementById('pageNumber').value = book.pageNumber;
+    books.splice(index, 1); //Remove old entry
+    showbooks(); //Refresh list 
+}
+
+function clearUnputs() {
+    document.getElementById('bookName').value = '';
+    document.getElementById('authorName').value = '';
+    document.getElementById('bookDescription').value = '';
+    document.getElementById('pagesNumber').value = '';
+}
+
+
+
+
