@@ -22,14 +22,15 @@ function addBook() {
 }
 
 function showbooks() {
-    const booksDiv = books.map((book,index) => `<h1>book Number: ${index + 1}</h1>
+    const booksDiv = books.map((book, index) => `<h1>book Number: ${index + 1}</h1>
     <p><strong>Book Name: </strong>${book.name}</p>
     <p><strong>Author Name:</strong> ${book.authorName}</p>
     <p><strong>Book Description:</strong>${book.bookDescripton}</p>
     <p><strong>No. of Pages:</strong> ${book.pageNumber} page(s)</p>
-    <button onclick="editbook(${index})>Edit</button>`
-);
-document.getElementById('books').innerHTML = booksDiv.join('');
+    <button onclick="editbook(${index})">Edit</button>
+    <button onclick="deletebook(${index})">Delete</button>`
+    );
+    document.getElementById('books').innerHTML = booksDiv.join('');
 }
 
 function editbook(index) {
@@ -47,6 +48,12 @@ function clearUnputs() {
     document.getElementById('authorName').value = '';
     document.getElementById('bookDescription').value = '';
     document.getElementById('pagesNumber').value = '';
+}
+
+function deletebook(index) {
+    //Remove the book entry at the given index
+    books.splice(index, 1);
+    showbooks(); //Refresh the book list after deletion
 }
 
 
