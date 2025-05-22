@@ -42,7 +42,7 @@ function endTest() {
     // Display the results
     var outputDiv = document.getElementById("output");
     outputDiv.innerHTML = "<h2>Typing Test Results:</h2>" +
-        "<p>Total Length: " + total + "</p>" +
+        "<p>Total Length: " + total + "</p>" +  //Practice task 
         "<p>Words Typer: " + typedWords + "</p>" +
         "<p>Time Elapsed: " + timeElapsed.toFixed(2) + " seconds</p>" + 
         "<p>Words Per Minute (WPM): " + wpm + "</p>";
