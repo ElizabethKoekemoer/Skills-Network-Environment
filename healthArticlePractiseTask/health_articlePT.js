@@ -11,7 +11,7 @@ xhr.onload = function () {
     var articlesDiv = document.getElementById('articles');
 
     articles.forEach(function (article) {
-        var articleDiv = document.createElement('div');  // why???
+        var articleDiv = document.createElement('div');
         articleDiv.classList.add('article');
 
         var title = document.createElement('h2');
@@ -20,7 +20,7 @@ xhr.onload = function () {
         var description = document.createElement('p');
         description.textContent = article.description;
 
-        var waysHeader = document.createElement('h3') // how do you know h2,p en h3
+        var waysHeader = document.createElement('h3')
         waysHeader.textContent = 'Ways to Achieve:';
 
         var waysList = document.createElement('ul');
