@@ -6,7 +6,7 @@ function showlocationDetails(event) {
     const apiKey = 'YOUR_API_KEY'; //YOUR_API_KEY
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
-    fetch(apiUrl)  // 
+    fetch(apiUrl) 
         .then(response => response.json())
         .then(data => {
             const locationInfo = document.getElementById('locationInfo');
